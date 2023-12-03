@@ -20,39 +20,41 @@ I appreciate you getting in touch. Could you try executing the following command
 *TA:*
   
 Hi,  
-So, this result reveals that the issue is a NullPointerException of the readInput method. The software is crashing as a result of the input variable being null.     
-We must initialize the input variable to a non-null value in order to resolve this problem. This is how the code ought to appear:   
+So, this result reveals that the issue is a FileNotFoundException of the input.txt file. The error message FileNotFoundException is thrown when the named file does not exist, the pathname is incorrect, the pathname contains non-printing characters, the pathname is relative and does not resolve correctly relative to the actual current directory of the running application, the path to the file is broken, or the named file is actually a directory. For further information, can you please send me your code.
+
+Student:
+Following is my code:
 ```import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Main {
-    private static final String INPUT_FILE = "input.txt";
-
+public class Main{
     public static void main(String[] args) {
-        String input = readInput(INPUT_FILE);
-        System.out.println("Input: " + input);
-    }
-
-    private static String readInput(String filename) {
+        String fileName = "input.txt";
+        File file = new File(fileName);
+        Scanner scanner;
         try {
-            Scanner scanner = new Scanner(new File(filename));
-            return scanner.nextLine();
+            scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println(line);
+            }
+            scanner.close();
         } catch (FileNotFoundException e) {
-            System.err.println("File not found: " + filename);
-            System.exit(1);
-            return null;
+            e.printStackTrace();
         }
     }
 }
-```   
 
-Also, following is the file and directory structure you might need:
-```.
-├── Main.java
-├── input.txt
-└── run.sh
 ```
+
+TA:  
+In your original code on line8, instead of the fileName
+``` String fileName = "input.txt";```
+you have to present the full path to the file.     
+To get the file path:
+(a) On Windows, you can right-click on the file and select the “Properties” option.
+(b) On Mac, you can click on the file and press the shortcut keys Command + I to open the file properties dialog box.
 
 **Contents of every file prior to bug fixation:**
 1) Main.java:  
@@ -89,17 +91,4 @@ javac Main.java
 java -cp . Main  
 ```
 
-**Description of what to edit to fix the bug:     
-In the readInput method, initialize the input variable to a non-null value**
-```private static String readInput(String filename) {
-    String input = null;
-    try {
-        Scanner scanner = new Scanner(new File(filename));
-        input = scanner.nextLine();
-    } catch (FileNotFoundException e) {
-        System.err.println("File not found: " + filename);
-        System.exit(1);
-    }
-    return input;
-}
-```
+
