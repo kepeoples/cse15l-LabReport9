@@ -4,7 +4,7 @@
 
 Hi everyone,    
 I'm having trouble running my Java program. I'm trying to run the Main class, but I keep getting the following error message:    
-*Exception in thread "main" java.lang.NullPointerException at Main.readInput(Main.java:12) at Main.main(Main.java:6)"*  
+![Image1](Error1.png) 
 I think the issue might be with the input file, but I'm not sure. Can anyone help me out?    
 
 *TA:*
@@ -16,14 +16,17 @@ I appreciate you getting in touch. Could you try executing the following command
 *STUDENT:*
   
  Hey, I tried the command and this was my outcome:
+![Image2](TryingTACommand.png)
 
 *TA:*
   
 Hi,  
 So, this result reveals that the issue is a FileNotFoundException of the input.txt file. The error message FileNotFoundException is thrown when the named file does not exist, the pathname is incorrect, the pathname contains non-printing characters, the pathname is relative and does not resolve correctly relative to the actual current directory of the running application, the path to the file is broken, or the named file is actually a directory. For further information, can you please send me your code.
 
-Student:
-Following is my code:
+Student:  
+Hi, Thank you very much for the information.   
+ALso, following is my code:  
+
 ```import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -49,36 +52,51 @@ public class Main{
 ```
 
 TA:  
-In your original code on line8, instead of the fileName
+In your original code on line6, instead of the fileName
 ``` String fileName = "input.txt";```
 you have to present the full path to the file.     
 To get the file path:
 (a) On Windows, you can right-click on the file and select the “Properties” option.
 (b) On Mac, you can click on the file and press the shortcut keys Command + I to open the file properties dialog box.
 
-**Contents of every file prior to bug fixation:**
-1) Main.java:  
-```import java.io.File;
+Also, please let me know if your code works.
+
+STUDENT:
+Hi, My code is working now.
+Following is the result
+
+
+
+
+**FIle And Directory Structure**
+```project/
+├── MainClass.java
+├── input.txt
+└── run.sh
+```
+
+**Content of Each File before fixing the bug**
+1)
+```
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Main {
-    private static final String INPUT_FILE = "input.txt";
-
+public class MainClass {
     public static void main(String[] args) {
-        String input = readInput(INPUT_FILE);
-        System.out.println("Input: " + input);
-    }
-
-    private static String readInput(String filename) {
+        String fileName = "input.txt";
+        File file = new File(fileName);
+        Scanner scanner;
         try {
-            Scanner scanner = new Scanner(new File(filename));
-            return scanner.nextLine();
+            scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println(line);
+            }
+            scanner.close();
         } catch (FileNotFoundException e) {
-            System.err.println("File not found: " + filename);
-            System.exit(1);
+            e.printStackTrace();
         }
-        return null;
     }
 }
 ```
@@ -90,5 +108,6 @@ public class Main {
 javac Main.java  
 java -cp . Main  
 ```
-
+**Command To Trigger the Bug**
+```./run.sh```
 
