@@ -1,29 +1,40 @@
-# Lab Report 5
+# Lab Report 5 
 
-*STUDENT:*
+## Title: Debugging Scenario - Conversation on EdStem
 
+*Embarking on this debugging journey, I initiated a conversation on EdStem to address an unexpected behavior encountered while executing my Java program.  
+Following are the threads:* 
+
+*STUDENT:*  
+Title: Debugging Scenario  
+Body:
 Hi everyone,    
 I'm having trouble running my Java program. I'm trying to run the Main class, but I keep getting the following error message:    
-![Image1](Error1.png) 
+![Image1](Error.png)  
 I think the issue might be with the input file, but I'm not sure. Can anyone help me out?    
 
-*TA:*
-
+*TA:*  
+Title: Debugging Scenario  
+Body:
 Hello there,  
 I appreciate you getting in touch. Could you try executing the following command and report back to me with your findings?
 ```java -cp . Main input.txt```
 
-*STUDENT:*
-  
- Hey, I tried the command and this was my outcome:
-![Image2](TryingTACommand.png)
+*STUDENT:*  
+Title: Debugging Scenario    
+Body:  
+Hey, I tried the command and this was my outcome:
+![Image2](TACommand.png)
 
-*TA:*
-  
+*TA:*  
+Title: Debugging Scenario    
+Body:  
 Hi,  
 So, this result reveals that the issue is a FileNotFoundException of the input.txt file. The error message FileNotFoundException is thrown when the named file does not exist, the pathname is incorrect, the pathname contains non-printing characters, the pathname is relative and does not resolve correctly relative to the actual current directory of the running application, the path to the file is broken, or the named file is actually a directory. For further information, can you please send me your code.
 
-Student:  
+Student:
+Title: Debugging Scenario  
+Body:  
 Hi, Thank you very much for the information.   
 ALso, following is my code:  
 
@@ -63,7 +74,8 @@ Also, please let me know if your code works.
 
 STUDENT:
 Hi, My code is working now.
-Following is the result
+Following is the result  
+![Image3](BugFixed.png)
 
 
 
@@ -108,6 +120,13 @@ public class MainClass {
 javac Main.java  
 java Main  
 ```
-**Command To Trigger the Bug**
+**Command To Trigger the Bug**  
 ```./run.sh```
+
+**The Bug**
+Instead of just writing the filename; the full path to the file should be presented as presented below:
+``` String fileName = "input.txt";```  
+```C:\Users\kevin\OneDrive\Desktop\input.txt```  
+Writing the file extension ```.txt``` is also important.
+
 
