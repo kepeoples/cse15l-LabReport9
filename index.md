@@ -106,7 +106,7 @@ public class MainClass {
 ``` 
 #!/bin/bash  
 javac Main.java  
-java -cp . Main  
+java Main  
 ```
 **Command To Trigger the Bug**
 ```./run.sh```
