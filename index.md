@@ -114,4 +114,8 @@ Instead of just writing the filename; the full path to the file should be presen
 ```C:\Users\kevin\OneDrive\Desktop\input.txt```  
 Writing the file extension ```.txt``` is also important.
 
+## Part2
+During the second half of the quarter, I learnt a lot of new skills like `git commit`, `git add` and `git push`.
+
+
 
