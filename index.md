@@ -56,11 +56,8 @@ public class Main{
             scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-    }
-}
-
-```
+        }}} 
+```  
 
 TA:  
 In your original code on line6, instead of the fileName
