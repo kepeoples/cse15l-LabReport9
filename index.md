@@ -115,7 +115,16 @@ Instead of just writing the filename; the full path to the file should be presen
 Writing the file extension ```.txt``` is also important.
 
 ## Part2
-During the second half of the quarter, I learnt a lot of new skills like `git commit`, `git add` and `git push`.
+I picked up a bunch of new skills in the second half of the quarter, including the ability to use the following commands:    
+`git commit`: An instruction known as "git commit" saves modifications to a Git repository together with an explanation of the changes that were made.   
+`git add`: In Git, a "git add" command stages changes in order to make them ready for inclusion in the subsequent commit.  
+`git push`: In Git, a "git push" command transfers commits from the local repository to a remote repository, updating it with the most recent changes.
+
+Additionally, **Vim** was something completely new to me.     
+Vim is a very customizable text editor designed to facilitate effective text editing. It has strong functionality for editing text and code and is frequently used from the command line. An interactive tutorial called "vimtutor" is included with Vim to help new users become acquainted with its features and commands.  
+
+CSE15L also made me familiar with working with terminal alone.
+
 
 
 
