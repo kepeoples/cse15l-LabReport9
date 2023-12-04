@@ -58,6 +58,7 @@ public class Main{
             e.printStackTrace();
         }}} 
 ```  
+    
 
 TA:  
 In your original code on line6, instead of the fileName
@@ -67,7 +68,8 @@ To get the file path:
 (a) On Windows, you can right-click on the file and select the “Properties” option.
 (b) On Mac, you can click on the file and press the shortcut keys Command + I to open the file properties dialog box.
 
-Also, please let me know if your code works.
+Also, please let me know if your code works.  
+
 
 STUDENT:
 Hi, My code is working now.
