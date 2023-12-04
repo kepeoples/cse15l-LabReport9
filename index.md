@@ -38,26 +38,7 @@ Body:
 Hi, Thank you very much for the information.   
 ALso, following is my code:  
 
-```import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
-public class Main{
-    public static void main(String[] args) {
-        String fileName = "input.txt";
-        File file = new File(fileName);
-        Scanner scanner;
-        try {
-            scanner = new Scanner(file);
-            while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                System.out.println(line);
-            }
-            scanner.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }}} 
-```  
+![Image](Code.png)
     
 
 TA:  
@@ -81,15 +62,14 @@ Following is the result
 
 **FIle And Directory Structure**
 ```project/
-├── MainClass.java
+├── Main.java
 ├── input.txt
 └── run.sh
 ```
 
 **Content of Each File before fixing the bug**
-1)
-```
-import java.io.File;
+1) Main.java  
+```import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
