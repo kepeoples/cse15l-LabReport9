@@ -113,7 +113,7 @@ public class MainClass {
 }
 ```
 2) input.txt:      
-```Hello, world!```
+```Hello, world!```  
 3) run.sh:
 ``` 
 #!/bin/bash  
