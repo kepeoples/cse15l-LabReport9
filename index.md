@@ -21,7 +21,7 @@ I appreciate you getting in touch. Could you try executing the following command
 ```java -cp . Main input.txt```
 
 *STUDENT:*  
-Title: Debugging Scenario    
+Title: Debugging Scenario     
 Body:  
 Hey, I tried the command and this was my outcome:
 ![Image2](TACommand.png)
