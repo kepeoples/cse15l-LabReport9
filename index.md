@@ -68,8 +68,10 @@ Following is the result
 ```
 
 **Content of Each File before fixing the bug**
-1) Main.java  
-```import java.io.File;
+1) Main.java
+     
+```
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
@@ -90,19 +92,23 @@ public class MainClass {
         }
     }
 }
-```
+```  
+
 2) input.txt:      
 ```Hello, world!```  
+  
 3) run.sh:
 ``` 
 #!/bin/bash  
 javac Main.java  
 java Main  
-```
-**Command To Trigger the Bug**  
-```./run.sh```
+```  
 
-**The Bug**
+**Command To Trigger the Bug**    
+```./run.sh```  
+
+
+**The Bug**  
 Instead of just writing the filename; the full path to the file should be presented as presented below:
 ``` String fileName = "input.txt";```  
 ```C:\Users\kevin\OneDrive\Desktop\input.txt```  
